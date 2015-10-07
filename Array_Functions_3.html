@@ -1,0 +1,49 @@
+<html>
+<head>
+	<script type="text/javascript">
+
+//--------------------------------------------------------------------------------------------------
+
+		// #lOOP : Function to get the total number of geeks irrespective of subjects
+		function fnGetTotalGeeks_loop(aSubjectGeeks){
+			var sum = 0;
+			for(var i = 0 ; i < aSubjectGeeks.length ; i ++){
+				sum = sum + aSubjectGeeks[i].iNoOfGeeks;
+			}
+			return sum;
+		}
+
+		aSubjectGeeks = [
+			{sSubject : "Java"  , iNoOfGeeks : 5},
+			{sSubject : "C++"   , iNoOfGeeks : 10},
+			{sSubject : "C"     , iNoOfGeeks : 10},
+			{sSubject : "Python", iNoOfGeeks : 15}
+		];
+		
+		console.log(fnGetTotalGeeks_loop(aSubjectGeeks));
+
+//-------------------------------------------------------------------------------------------------
+		
+		// #REDUCE : Function to get the total number of geeks irrespective of subjects
+		function fnGetTotalGeeks_reduce(aSubjectGeeks){
+			return aSubjectGeeks.reduce(function(pValue , cValue, index, array){
+				return pValue + cValue.iNoOfGeeks;
+			}, 0);
+		}
+
+		aSubjectGeeks = [
+			{sSubject : "Java"  , iNoOfGeeks : 5},
+			{sSubject : "C++"   , iNoOfGeeks : 10},
+			{sSubject : "C"     , iNoOfGeeks : 10},
+			{sSubject : "Python", iNoOfGeeks : 15}
+		];
+		console.log(fnGetTotalGeeks_reduce(aSubjectGeeks));
+		
+//--------------------------------------------------------------------------------------------------
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
