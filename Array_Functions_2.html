@@ -5,7 +5,7 @@
 		
 //--------------------------------------------------------------------------------------------------
 
-		// #FILTER : Function to get the details of students who got more than 80 percent
+		// #LOOP : Function to get the details of students who got more than 80 percent
 		
 		function fnFilterStudents_loop(aStudent){
 			var tempArr = [];
@@ -14,37 +14,42 @@
 			}
 			return tempArr;
 		}
-		
-		function fnFilterStudents_filter(aStudent){
-			return aStudent.filter(function(oStudent){
-				return oStudent.fPercentage > 80.0 ? true : false; 
-			});
-		}
-
 
 		aStudent = [
 			{ sStudentId : "001" , fPercentage : 91.2 },
 			{ sStudentId : "002" , fPercentage : 78.7 },
 			{ sStudentId : "003" , fPercentage : 62.9 },
 			{ sStudentId : "004" , fPercentage : 81.4 }];
-		console.log(fnFilterStudents_loop(aStudent))	
+		
+		console.log(fnFilterStudents_loop(aStudent))
+
+//--------------------------------------------------------------------------------------------------		
+		// #FILER : Function to get the details of students who got more than 80 percent
+
+		function fnFilterStudents_filter(aStudent){
+			return aStudent.filter(function(oStudent){
+				return oStudent.fPercentage > 80.0 ? true : false; 
+			});
+		}
+
+		aStudent = [
+			{ sStudentId : "001" , fPercentage : 91.2 },
+			{ sStudentId : "002" , fPercentage : 78.7 },
+			{ sStudentId : "003" , fPercentage : 62.9 },
+			{ sStudentId : "004" , fPercentage : 81.4 }];
+			
 		console.log(fnFilterStudents_filter(aStudent));
 
 //--------------------------------------------------------------------------------------------------
 
-		// #MAP : Function to add property bIsDistinction to each element
-		function fnAddDistinction_map(aStudent){
-			return aStudent.map(function(student, index, array){
-						student.bIsDistinction = (student.fPercentage >= 75.0) ? true : false;
-						return student;
-					});
-		}
+		// #lOOP : Function to add property bIsDistinction to each element
 		function fnAddDistinction_loop(aStudent){
 			for(var i = 0 ; i < aStudent.length ; i ++){
 				aStudent[i].bIsDistinction = (aStudent[i].fPercentage >= 75.0) ? true : false;
 			}
 			return aStudent;
 		}
+
 		aStudent = [
 			{ sStudentId : "001" , fPercentage : 91.2 },
 			{ sStudentId : "002" , fPercentage : 78.7 },
@@ -53,17 +58,28 @@
 		];
 
 		console.log(fnAddDistinction_loop(aStudent));
+
+//-------------------------------------------------------------------------------------------------		
+		// #MAP : Function to add property bIsDistinction to each element
+		function fnAddDistinction_map(aStudent){
+			return aStudent.map(function(student, index, array){
+						student.bIsDistinction = (student.fPercentage >= 75.0) ? true : false;
+						return student;
+					});
+		}
+
+		aStudent = [
+			{ sStudentId : "001" , fPercentage : 91.2 },
+			{ sStudentId : "002" , fPercentage : 78.7 },
+			{ sStudentId : "003" , fPercentage : 62.9 },
+			{ sStudentId : "004" , fPercentage : 81.4 }			
+		];
+		
 		console.log(fnAddDistinction_map(aStudent));
 
 //--------------------------------------------------------------------------------------------------
 
-		// #REDUCE : Function to get the total number of geeks irrespective of subjects
-		function fnGetTotalGeeks_reduce(aSubjectGeeks){
-			return aSubjectGeeks.reduce(function(pValue , cValue, index, array){
-				return pValue + cValue.iNoOfGeeks;
-			}, 0);
-		}
-
+		// #lOOP : Function to get the total number of geeks irrespective of subjects
 		function fnGetTotalGeeks_loop(aSubjectGeeks){
 			var sum = 0;
 			for(var i = 0 ; i < aSubjectGeeks.length ; i ++){
@@ -78,8 +94,26 @@
 			{sSubject : "C"     , iNoOfGeeks : 10},
 			{sSubject : "Python", iNoOfGeeks : 15}
 		];
-		console.log(fnGetTotalGeeks_reduce(aSubjectGeeks));
+		
 		console.log(fnGetTotalGeeks_loop(aSubjectGeeks));
+
+//-------------------------------------------------------------------------------------------------
+		
+		// #REDUCE : Function to get the total number of geeks irrespective of subjects
+		function fnGetTotalGeeks_reduce(aSubjectGeeks){
+			return aSubjectGeeks.reduce(function(pValue , cValue, index, array){
+				return pValue + cValue.iNoOfGeeks;
+			}, 0);
+		}
+
+		aSubjectGeeks = [
+			{sSubject : "Java"  , iNoOfGeeks : 5},
+			{sSubject : "C++"   , iNoOfGeeks : 10},
+			{sSubject : "C"     , iNoOfGeeks : 10},
+			{sSubject : "Python", iNoOfGeeks : 15}
+		];
+		console.log(fnGetTotalGeeks_reduce(aSubjectGeeks));
+		
 //--------------------------------------------------------------------------------------------------
 
 	</script>
