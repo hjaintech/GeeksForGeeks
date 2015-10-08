@@ -45,7 +45,20 @@
 	console.log(fnFilterStudents_filter(aStudent));
 	//Output:   [{ sStudentId : "001" , fPercentage : 91.2 },
 	//	    	 { sStudentId : "004" , fPercentage : 81.4 }];
+//--------------------------------------------------------------------------------------------------
 
+	// Function to remove undefined elements from array
+	
+	function removeUndefined(myArray){
+		return myArray.filter(function(element, index, array){
+			return element;
+		});
+	}
+
+	var arr = [1,undefined,3,undefined,5];
+	
+	console.log(arr);
+	console.log(removeUndefined(arr));
 //--------------------------------------------------------------------------------------------------
 
 		// #lOOP : Function to add property bIsDistinction to each element
