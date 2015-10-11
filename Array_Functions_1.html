@@ -2,7 +2,7 @@
 <head>
 	<script type="text/javascript" >
 
-
+//----------------------------------------------------------------------------------------------------------
 // Array.every() calls the callback function for each element of array until it finds an element for which the callback 
 
 
@@ -17,6 +17,7 @@ function fnIsLessThan100_Every(arr){
 fnIsLessThan100_Every([30,60,90]);       // Output : true
 fnIsLessThan100_Every([30,60,90,120]);   // Output : false
 
+//----------------------------------------------------------------------------------------------------------
 // Function to check if all emements of array are smaller than 100 or not using for loop
 
 
@@ -31,7 +32,7 @@ function fnIsLessThan100_Loop(arr){
 fnIsLessThan100_Loop([30,60,90]);       // Output : true
 fnIsLessThan100_Loop([30,60,90,120]);   // Output : false
 
-
+//----------------------------------------------------------------------------------------------------------
 // Function to check if all elements of array are of a spcified datatype using array.every()
 
 
@@ -43,6 +44,7 @@ function fnCheckDatatype_Every(arr, sDatatype){
 fnCheckDatatype_Every(["Geeks","for","Geeks"],"string");  // Output : true
 fnCheckDatatype_Every(["Geeks",4,"Geeks"],"string");      // Output : false
 
+//----------------------------------------------------------------------------------------------------------
 // Function to check if all elements of array are of a spcified datatype using for loop
 
 
@@ -57,6 +59,7 @@ function fnCheckDatatype_Loop(arr, sDatatype){
 fnCheckDatatype_Loop(["Geeks","for","Geeks"],"string"); // Output : true
 fnCheckDatatype_Loop(["Geeks",4,"Geeks"],"string");     // Output : false	
 
+//----------------------------------------------------------------------------------------------------------
 //Function to check if array contains any number greater than 100
 function fnIsGreaterThan100_loop(arr){
 	for(var i = 0 ; i < arr.length; i ++){
@@ -69,7 +72,7 @@ function fnIsGreaterThan100_loop(arr){
 fnIsGreaterThan100_loop([30,60,90,120]); // Output : true
 fnIsGreaterThan100_loop([30,60,90]);     // Output : false
 
-
+//----------------------------------------------------------------------------------------------------------
 //Function to check if array contains any number greater than 100
 function fnIsGreaterThan100_some(arr){
 	return arr.some(function(element){
@@ -79,6 +82,7 @@ function fnIsGreaterThan100_some(arr){
 fnIsGreaterThan100_some([30,60,90,120]); // Output : true
 fnIsGreaterThan100_some([30,60,90]);     // Output : false
 
+//----------------------------------------------------------------------------------------------------------
 // Function to check if array contains any even number
 function fnIsEven_loop(arr){
 	for(var i = 0 ; i < arr.length ; i ++){
@@ -91,6 +95,7 @@ function fnIsEven_loop(arr){
 fnIsEven_loop([1,3,5])   // Output : false
 fnIsEven_loop([1,3,5,6]) // Output : true
 
+//----------------------------------------------------------------------------------------------------------
 // Function to check if array contains any even number
 function fnIsEven_some(arr){
 	return arr.some(function(element){
@@ -99,7 +104,7 @@ function fnIsEven_some(arr){
 }
 fnIsEven_some([1,3,5])   // Output : false
 fnIsEven_some([1,3,5,6]) // Output : true
-
+//----------------------------------------------------------------------------------------------------------
 
 </script>
 </head>
