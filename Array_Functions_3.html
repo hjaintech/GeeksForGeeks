@@ -1,49 +1,110 @@
 <html>
-<head>
-	<script type="text/javascript">
-
-//--------------------------------------------------------------------------------------------------
-
-		// #lOOP : Function to get the total number of geeks irrespective of subjects
-		function fnGetTotalGeeks_loop(aSubjectGeeks){
-			var sum = 0;
-			for(var i = 0 ; i < aSubjectGeeks.length ; i ++){
-				sum = sum + aSubjectGeeks[i].iNoOfGeeks;
+	<body>
+		<script>
+			
+			function reduceFun1(previousValue, currentValue, index, array){
+				return previousValue + currentValue;
 			}
-			return sum;
-		}
 
-		aSubjectGeeks = [
-			{sSubject : "Java"  , iNoOfGeeks : 5},
-			{sSubject : "C++"   , iNoOfGeeks : 10},
-			{sSubject : "C"     , iNoOfGeeks : 10},
-			{sSubject : "Python", iNoOfGeeks : 15}
-		];
-		
-		console.log(fnGetTotalGeeks_loop(aSubjectGeeks));
+			var result = [1,2,3,4,5].reduce(reduceFun1);
+			
+			console.log(result); // Output : 15
 
-//-------------------------------------------------------------------------------------------------
-		
-		// #REDUCE : Function to get the total number of geeks irrespective of subjects
-		function fnGetTotalGeeks_reduce(aSubjectGeeks){
-			return aSubjectGeeks.reduce(function(pValue , cValue, index, array){
-				return pValue + cValue.iNoOfGeeks;
-			}, 0);
-		}
 
-		aSubjectGeeks = [
-			{sSubject : "Java"  , iNoOfGeeks : 5},
-			{sSubject : "C++"   , iNoOfGeeks : 10},
-			{sSubject : "C"     , iNoOfGeeks : 10},
-			{sSubject : "Python", iNoOfGeeks : 15}
-		];
-		console.log(fnGetTotalGeeks_reduce(aSubjectGeeks));
-		
-//--------------------------------------------------------------------------------------------------
 
-	</script>
-</head>
-<body>
 
-</body>
+			var arr=[{name: "customer 1", sales: 500, location: "NY"},
+					 {name: "customer 1", sales: 200, location: "NJ"},
+				 	 {name: "customer 1", sales: 700, location: "NY"},
+					 {name: "customer 1", sales: 200, location: "ORD"},
+					 {name: "customer 1", sales: 300, location: "NY"}];
+
+			function reduceFun2(previousValue, currentValue, index, array){
+				if(currentValue.location === "NY"){
+					return previousValue + currentValue.sales;
+				}
+				return previousValue;
+			}
+
+			var totalSalesInNY = arr.reduce(reduceFun2);
+			
+			console.log(totalSalesInNY); // Output: 1500
+
+
+			var arr1 = [1,2,3,4];
+			var arr2 = [5,6,7,8];
+			var arr3 = arr1.concat(arr2);
+			console.log(arr3); // Output :  [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+			var arr1 = [1,2,3,4];
+			var arr2 = [5,6];
+			var arr3 = [7,8];
+			var arr4 = arr1.concat(arr2,arr3);
+			console.log(arr4); // Output :  [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+			var arr1 = [1,2,3,4];
+			var arr2 = arr1.concat(5,6,7,8);
+			console.log(arr2); // Output :  [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+			var arr1 = [1,2,3,4];
+			var arr2 = [5,6];
+			var arr3 = arr1.concat(arr2, 7, 8);
+			console.log(arr3); // Output :  [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+			var arr = [3, 1, 5, 4, 2].sort();
+			console.log(arr); // Output : [1, 2, 3, 4, 5]
+
+
+
+
+			var arr = ["Orange", "Apple", "Banana"].sort();
+			console.log(arr); // Output : ["Apple", "Banana", "Orange"]
+
+
+
+
+
+			var arr = [1, 30, 5].sort();
+			console.log(arr); // Output : [1, 30, 5]
+
+
+
+
+			function sortFun(a,b){
+				return a - b;
+			}
+			var arr = [1, 30, 5].sort(sortFun);
+			console.log(arr); // Output : [1, 5, 30]
+
+
+
+
+			var arr = [{name:"NY",  count: 20},
+					   {name:"NJ",  count: 5},
+					   {name:"JFK", count: 60},
+					   {name:"ORD", count: 1}];
+
+			function sortFun(obj1, obj2){
+				return obj1.count - obj2.count;
+			}
+			arr.sort(sortFun);
+			console.log(arr);  // Output [{name:"ORD",  count: 1},
+					   		   //	      {name:"NJ",  count: 5},
+					   		   //         {name:"NY", count: 20},
+					   	       //         {name:"JFK", count: 60}]
+
+
+
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			arr.reverse();
+			console.log(arr); //Output : [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+
+
+		</script>
+	</body>
 </html>
